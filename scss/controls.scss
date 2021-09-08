@@ -1,0 +1,61 @@
+@import "def";
+@import "./controls/loading";
+
+@mixin FontCenter{
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+section.hindi{
+   font-size: 62.5%;
+   margin-top: 1rem;
+   font-family: "Fredoka One", cursive;
+      
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   .main-div{
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      display: grid;
+      place-items: center;
+
+      .center-div{
+         width: 12rem;
+         height: 12rem;
+         // background-color: red;
+         // display: grid;
+         // place-items: center;
+         position: relative;
+         
+      }
+
+      .rot {
+         width: 12rem;
+         height: 12rem;
+         border-radius: 50%;
+         border-right: 0.3rem solid #fff;
+         animation: rot 2s linear infinite;
+
+         position: absolute;
+      }
+
+      @keyframes rot {
+         0%{
+            transform: rotate(0deg);
+         }
+         100%{
+            transform: rotate(360deg);
+         }
+      }
+ 
+      h1{
+         color: #fff;
+         @include FontCenter();
+      }
+   }
+}
