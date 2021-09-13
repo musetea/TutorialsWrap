@@ -13,6 +13,9 @@ app.use(express.json());
 
 app.get("/", (req, res) => { res.render("index"); });
 app.get("/controls/loading", (req, res) => { res.render("controls/loading"); });
+app.get("/controls/button", (req, res) => { res.render("controls/button"); });
+app.get("/controls/checkbox", (req, res) => { res.render("controls/checkbox"); });
+app.get("/controls/Glassmorphism", (req, res) => { res.render("controls/Glassmorphism"); });
 
 
 app.listen(PORT, function () {

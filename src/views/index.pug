@@ -6,9 +6,14 @@ html(lang="ko")
       title OPEN TUTORIALS ...
       link(rel="stylesheet", href="../scss/index.css")
    body 
-   
+      mixin addLinkItem(i)
+         li 
+            a(href=i.src)= i.title
+
       header.header 
          nav.nav 
             ul 
-               li 
-                  a(href="/controls/loading") Loading... 
+               +addLinkItem({src:"/controls/loading", title:"Loading"})
+               +addLinkItem({src:"/controls/button", title:"Button"})
+               +addLinkItem({src:"/controls/checkbox", title:"CheckBox"})
+               +addLinkItem({src:"/controls/Glassmorphism", title:"Glassmorphism"})

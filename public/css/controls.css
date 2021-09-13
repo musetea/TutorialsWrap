@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+.loading-container {
+  padding: 2rem;
+  background-color: #042104;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loader {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  -webkit-animation: animateBg 10s linear infinite;
+          animation: animateBg 10s linear infinite;
+}
+
+.loader span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotate(calc(18deg * var(--i)));
+          transform: rotate(calc(18deg * var(--i)));
+}
+
+.loader span::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #00ff0a;
+  -webkit-box-shadow: 0 0 10px #00ff0a, 0 0 20px #00ff0a, 0 0 40px #00ff0a, 0 0 60px #00ff0a, 0 0 80px #00ff0a, 0 0 100px #00ff0a;
+          box-shadow: 0 0 10px #00ff0a, 0 0 20px #00ff0a, 0 0 40px #00ff0a, 0 0 60px #00ff0a, 0 0 80px #00ff0a, 0 0 100px #00ff0a;
+  -webkit-animation: animate 2s linear infinite;
+          animation: animate 2s linear infinite;
+  -webkit-animation-delay: calc(0.1s * var(--i));
+          animation-delay: calc(0.1s * var(--i));
+}
+
+@-webkit-keyframes animateBg {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes animateBg {
+  0% {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  100% {
+    -webkit-filter: hue-rotate(360deg);
+            filter: hue-rotate(360deg);
+  }
+}
+
+@-webkit-keyframes animate {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  80%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes animate {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  80%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+section.hindi {
+  font-size: 62.5%;
+  margin-top: 1rem;
+  font-family: "Fredoka One", cursive;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+section.hindi .main-div {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+section.hindi .main-div .center-div {
+  width: 12rem;
+  height: 12rem;
+  position: relative;
+}
+
+section.hindi .main-div .rot {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  border-right: 0.3rem solid #fff;
+  -webkit-animation: rot 2s linear infinite;
+          animation: rot 2s linear infinite;
+  position: absolute;
+}
+
+@-webkit-keyframes rot {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rot {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+section.hindi .main-div h1 {
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.wrapper {
+  padding: 2rem;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.button-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.button-container .button label {
+  position: relative;
+  margin: .5rem 0;
+  padding: .5rem 0;
+  cursor: pointer;
+}
+
+.button-container .button label input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: none;
+}
+
+.button-container .button label span {
+  display: block;
+  width: 8rem;
+  height: 4rem;
+  border-radius: 4rem;
+  background-color: #222;
+  position: relative;
+  -webkit-box-shadow: 0 0.2rem 1.5rem rgba(0, 0, 0, 0.2) inset, 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2) inset, 0 -0.1rem 0.1rem rgba(0, 0, 0, 0.2) inset;
+          box-shadow: 0 0.2rem 1.5rem rgba(0, 0, 0, 0.2) inset, 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2) inset, 0 -0.1rem 0.1rem rgba(0, 0, 0, 0.2) inset;
+}
+
+.button-container .button label .indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4rem;
+  height: 4rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#444), to(#222));
+  background: linear-gradient(to bottom, #444, #222);
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5) inset, 0 0.1rem 0.1rem rgba(255, 255, 255, 0.1) inset;
+          box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5) inset, 0 0.1rem 0.1rem rgba(255, 255, 255, 0.1) inset;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.button-container .button label .indicator::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50% -50%);
+          transform: translate(-50% -50%);
+  width: .5rem;
+  height: .5rem;
+  background-color: #f00;
+  border-radius: 50%;
+  -webkit-transition: .5s;
+  transition: .5s;
+  -webkit-box-shadow: 0 0 0.2rem #f00, 0 0 0.5rem #f00, 0 0 1rem #f00, 0 0 1.5rem #f00, 0 0 2rem #f00, 0 0 2.5rem #f00, 0 0 3rem #f00, 0 0 3.5rem #f00, 0 0 4rem #f00;
+          box-shadow: 0 0 0.2rem #f00, 0 0 0.5rem #f00, 0 0 1rem #f00, 0 0 1.5rem #f00, 0 0 2rem #f00, 0 0 2.5rem #f00, 0 0 3rem #f00, 0 0 3.5rem #f00, 0 0 4rem #f00;
+}
+
+.button-container .button label input:checked ~ .indicator {
+  left: 4rem;
+}
+
+.button-container .button label input:checked ~ .indicator::before {
+  background-color: #0f0;
+  -webkit-box-shadow: 0 0 0.2rem #0f0, 0 0 0.5rem #0f0, 0 0 1rem #0f0, 0 0 1.5rem #0f0, 0 0 2rem #0f0, 0 0 2.5rem #0f0, 0 0 3rem #0f0, 0 0 3.5rem #0f0, 0 0 4rem #0f0;
+          box-shadow: 0 0 0.2rem #0f0, 0 0 0.5rem #0f0, 0 0 1rem #0f0, 0 0 1.5rem #0f0, 0 0 2rem #0f0, 0 0 2.5rem #0f0, 0 0 3rem #0f0, 0 0 3.5rem #0f0, 0 0 4rem #0f0;
+}
+
+.checkbox-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.checkbox-container .labbelCheckBox input.control {
+  -webkit-appearance: none;
+  visibility: hidden;
+  display: none;
+}
+
+.checkbox-container .labbelCheckBox .check {
+  position: relative;
+  display: block;
+  width: 4rem;
+  height: 2rem;
+  background-color: #092c3e;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 2rem;
+  -webkit-transition: 0.5s ease-in;
+  transition: 0.5s ease-in;
+}
+
+.checkbox-container .labbelCheckBox input.control:checked ~ .check {
+  background: #fff;
+}
+
+.checkbox-container .labbelCheckBox .check::after {
+  content: '';
+  position: absolute;
+  top: .2rem;
+  right: .2rem;
+  background-color: #092c3e;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  -webkit-transform: translateX(50px);
+          transform: translateX(50px);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.checkbox-container .labbelCheckBox input.control:checked ~ .check::after {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}

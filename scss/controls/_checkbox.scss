@@ -1,0 +1,39 @@
+
+@mixin LabelCheckBox($size, $color){
+   input.control{
+      -webkit-appearance: none;
+      visibility: hidden;
+      display: none;
+   }
+
+   .check {
+      position: relative;
+      display: block;
+      width: $size *2;
+      height: $size;
+      background-color: $color;
+      cursor: pointer;
+      overflow: hidden;
+      border-radius: $size;
+      transition: 0.5s ease-in;
+   }
+   input.control:checked ~ .check {
+      background: #fff;
+   }
+
+   .check::after {
+      content: '';
+      position: absolute;
+      top: .2rem;
+      right: .2rem;
+      background-color: $color;
+      width: 1.6rem;
+      height: 1.6rem;
+      border-radius: 50%;
+      transform: translateX(50px);
+      transition: .5s;
+   }
+   input.control:checked ~ .check::after {
+      transform: translateX(0);
+   }
+}

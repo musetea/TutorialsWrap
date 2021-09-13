@@ -1,0 +1,85 @@
+// 부모의 중앙위치에 
+@mixin MoveCenter(){
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50% -50%);
+}
+
+
+// 버튼 컨틀롤 
+@mixin LabelButton($size, $onColor, $offColor) {
+   .button {
+      label {
+         position: relative;
+         margin: .5rem 0;
+         padding: .5rem 0;
+         cursor: pointer;
+
+         input {
+            appearance: none;
+            display: none;
+         }
+
+         span{
+            display: block;
+            width: $size * 2;
+            height: $size;
+            border-radius: $size;
+            background-color: #222;
+            position: relative;
+            box-shadow: 0 0.2rem 1.5rem rgba(0,0,0, 0.2) inset,
+               0 .2rem .2rem rgba(0,0,0, 0.2) inset,
+               0 -.1rem .1rem rgba(0,0,0, 0.2) inset;
+         }
+
+         .indicator {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: $size;
+            height: $size;
+            background: linear-gradient(to bottom, #444, #222);
+            border-radius: 50%;
+            box-shadow: 0 .2rem .5rem rgba(0,0,0, 0.5) inset,
+                        0 .1rem .1rem rgba(255,255,255, 0.1) inset;
+            transition: 0.5s;
+         }
+         .indicator::before {
+            content: "";
+            @include MoveCenter();
+            width: .5rem;
+            height: .5rem;
+            background-color: $offColor;
+            border-radius: 50%;
+            transition: .5s;
+            box-shadow:  0 0 .2rem $offColor,
+            0 0 .5rem $offColor,
+            0 0 1rem $offColor,
+            0 0 1.5rem $offColor,
+            0 0 2rem $offColor,
+            0 0 2.5rem $offColor,
+            0 0 3rem $offColor,
+            0 0 3.5rem $offColor,
+            0 0 4rem $offColor;
+            
+         }
+
+         input:checked ~ .indicator {
+            left: $size;
+         }
+         input:checked ~ .indicator::before{
+            background-color: $onColor;
+            box-shadow:  0 0 .2rem $onColor,
+            0 0 .5rem $onColor,
+            0 0 1rem $onColor,
+            0 0 1.5rem $onColor,
+            0 0 2rem $onColor,
+            0 0 2.5rem $onColor,
+            0 0 3rem $onColor,
+            0 0 3.5rem $onColor,
+            0 0 4rem $onColor;
+         }
+      }
+   }
+}

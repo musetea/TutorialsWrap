@@ -1,0 +1,201 @@
+@import "def";
+
+$mainColor: #8a2435;
+$bgColor: rgba(255,255,255, .5);
+$headerColor: rgba(255,255,255, .2);
+
+$bgBoxShadow: 0 1.5rem 3.5rem rgba(0,0,0, .05);
+$mainBoxShadow: 0 1.5rem 3rem rgba(0,0,0, .1);
+
+$border: .1rem solid rgba(255, 255, 255, .25);
+$border-side: .1rem solid rgba(255, 255, 255, .5);
+
+.btn{
+   display: inline-block;
+   padding: 1.5rem 3rem;
+   font-size: 1.2em;
+   font-weight: 500;
+   background-color: #fff;
+   color: $mainColor;
+   border-radius: 2rem;
+   box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+
+body {
+   min-height: 100vh;
+   padding: 5rem;
+   background: url("../assets/Glassmorphism/bg2.jpg");
+   background-size: cover;
+   background-position: center;
+   background-attachment: fixed;
+   
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-transform: capitalize;
+}
+
+// 메인컨테이너
+.container{
+   position: relative;
+   width: calc(100% - 10rem);
+   min-height: calc(100vh - 28rem);
+   min-height: 30rem;
+   padding: 5rem;
+   background-color: $bgColor;
+   box-shadow: $bgBoxShadow;
+   border-radius: 2rem;
+
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+
+} 
+
+header {
+   position: absolute;
+   top: -4rem;
+   left: 2rem;
+   right: 2rem;
+   padding: 2rem 5rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   background-color: $headerColor;
+   box-shadow: $bgBoxShadow;
+   border-radius: 2rem;
+   backdrop-filter: blur(1rem);
+   border: $border;
+   border-top: $border-side;
+   border-left: $border-side;
+   
+
+   .logo{
+      font-size: 2em;
+      font-weight: bolder;
+      color: $mainColor;
+   }
+
+   nav ul{
+      display: flex;
+
+      li{
+         margin: 0 1rem;
+      }
+
+      a{
+         display: inline-block;
+         padding: .8rem 1.5rem;
+         font-weight: 500;
+         border-radius: 2.5rem;
+
+         color: $mainColor;
+
+         &:hover {
+            background-color: #fff;
+            box-shadow: 0 .5rem 1rem rgba(255, 255, 255, .1);
+         }
+      }
+
+      a.active {
+         background-color: #fff;
+         box-shadow: 0 .5rem 1rem rgba(255, 255, 255, .1);
+      }
+   }
+}
+
+// 
+.content {
+   transform: translateX(-10rem);
+   max-width: 70rem;
+   padding: 4rem;
+   padding-left: 6rem;
+
+   box-shadow: $mainBoxShadow;
+   border-radius: 2rem;
+   backdrop-filter: blur(1rem);
+   border: $border;
+   border-top: $border-side;
+   border-left: $border-side;
+
+   h2{
+      font-size: 3em;
+      color: $mainColor;
+   }
+   p{
+      font-size: 1.2em;
+      color: $mainColor;
+      line-height: 1.5;
+   }
+   a{
+      margin-top: 2rem;
+   }
+
+}
+
+// 
+.imgBox{
+   max-width: 40rem;
+   transform-origin: center;
+   animation: animate 5s linear infinite;
+   img{
+      width: 100%;
+      height: 100%;
+      
+   }
+   @keyframes animate {
+      0%,100%{
+         transform: translateY(5rem);
+      }
+      50%{
+         transform: translateY(10rem);
+      }
+      
+   }
+}
+
+// 
+ul.socials {
+   position: absolute;
+   right: -2.5rem;
+
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+
+   li a{
+      width: 5rem;
+      height: 5rem;
+      margin: .5rem 0;
+      background-color: #fff;
+      border-radius: 50%;
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   li a img{
+      transform: scale(.6);
+      transition: .5s;
+   }
+   li:hover {
+      a img{
+         transform: scale(.6) rotate(360deg);
+      }
+   }
+}
+
+// 
+p.createBy {
+   position: absolute;
+   left: 3rem;
+   bottom: 2rem;
+
+   span{
+      color: $mainColor;
+   }
+}

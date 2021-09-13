@@ -1,5 +1,7 @@
 @import "def";
 @import "./controls/loading";
+@import "./controls/button";
+@import "./controls/checkbox";
 
 @mixin FontCenter{
    position: absolute;
@@ -59,3 +61,31 @@ section.hindi{
       }
    }
 }
+
+// 버튼
+.wrapper {
+   padding: 2rem;
+   width: 100%;
+   min-height: 100vh;
+}
+
+.button-container {
+   width: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   @include LabelButton(4rem, #0f0, #f00)
+}
+
+.checkbox-container{
+   width: 100%;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
+   .labbelCheckBox {
+      @include LabelCheckBox(2rem, #092c3e);
+   }
+} 
