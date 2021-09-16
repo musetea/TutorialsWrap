@@ -1,5 +1,20 @@
 @import "def";
 
-*{
-   
+html{
+    font-size: 62.5%;
+}
+
+.header {
+
+    .nav{
+
+        display: flex;
+        align-items: center;
+
+        li{
+            display: inline-block;
+            margin-right: 1rem;
+            padding: .5rem;
+        }
+    }
 }

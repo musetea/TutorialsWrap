@@ -4,15 +4,15 @@ html(lang="ko")
       meta(http-equiv="X-UA-Compatible", content="IE=edge")
       meta(name="viewport", content="width=device-width, initial-scale=1.0")
       title OPEN TUTORIALS ...
-      link(rel="stylesheet", href="../scss/index.css")
+      link(rel="stylesheet", href="../css/index.css")
    body 
       mixin addLinkItem(i)
          li 
             a(href=i.src)= i.title
 
       header.header 
-         nav.nav 
-            ul 
+         nav
+            ul.nav  
                +addLinkItem({src:"/controls/loading", title:"Loading"})
                +addLinkItem({src:"/controls/button", title:"Button"})
                +addLinkItem({src:"/controls/checkbox", title:"CheckBox"})
